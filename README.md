@@ -57,5 +57,8 @@ source ~/.zshrc
 *Created and maintained with 🪄 and Gemini CLI.*
 
 
-
-https://github.com/mathiasbynens/dotfiles
+## Random Resources/Save 4 Later
+- https://github.com/mathiasbynens/dotfiles
+- https://herrbischoff.com/code/me/awesome-command-line-apps
+- https://herrbischoff.com/code/me/awesome-macos-command-line
+- https://macos-defaults.com/
