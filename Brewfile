@@ -82,8 +82,6 @@ cask "burp-suite"
 cask "chatterino"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
-# Browser for SQLite databases
-cask "db-browser-for-sqlite"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Voice and text chat software
@@ -98,16 +96,12 @@ cask "font-jetbrains-mono"
 cask "ghostty"
 # Free and open-source image editor
 cask "gimp"
-# Web browser
-cask "google-chrome"
 # Open-source video transcoder
 cask "handbrake-app"
 # Chromium-based web browser
 cask "helium-browser"
 # Utility to hide menu bar items
 cask "hiddenbar"
-# HTTP(S) debugging proxy, analyzer, and client
-cask "http-toolkit"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
 # Free cross-platform office suite, fresh version
@@ -120,6 +114,8 @@ cask "thusvill/livewallpaper/livewallpaper"
 cask "logi-options+"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
+# Office suite
+cask "microsoft-office-businesspro"
 # Smooths scrolling and set mouse scroll directions independently
 cask "mos"
 # Open-source software for live streaming and screen recording
@@ -134,8 +130,6 @@ cask "openvpn-connect"
 cask "pearcleaner"
 # Sideload iOS apps and games
 cask "playcover-community"
-# Collaboration platform for API development
-cask "postman"
 # Minecraft launcher
 cask "prismlauncher"
 # VPN client focusing on security
