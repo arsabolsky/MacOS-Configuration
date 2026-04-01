@@ -1,0 +1,21 @@
+[user]
+	name = arsabolsky
+	email = 11062264+arsabolsky@users.noreply.github.com
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[core]
+	editor = code --wait
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
