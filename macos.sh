@@ -29,24 +29,24 @@ echo "🚀 Setting macOS system defaults..."
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable the crash reporter
-defaults write com.apple.CrashReporter DialogType -string "none"
+# defaults write com.apple.CrashReporter DialogType -string "none"
 
 ###############################################################################
 # Input Devices: Keyboard, Mouse, Trackpad                                    #
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
 
 # Keyboard: Set a blazingly fast keyboard repeat rate
 # (Default: 2 is slow, 15 is fast)
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# defaults write NSGlobalDomain KeyRepeat -int 2
+# defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Keyboard: Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Finder                                                                      #
