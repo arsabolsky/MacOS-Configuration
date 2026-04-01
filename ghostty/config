@@ -1,0 +1,74 @@
+# ---------------------------------------------------------
+# GHOSTTY CONFIGURATION
+# ---------------------------------------------------------
+
+# ---------------------------------------------------------
+# THEME & COLORS
+# ---------------------------------------------------------
+theme = Ubuntu
+background = #300a24
+foreground = #eeeeec
+selection-background = #b5d5ff
+selection-foreground = #000000
+
+# Cursor Styling
+cursor-color = #bbbbbb
+cursor-text = #ffffff
+
+# ANSI Color Palette (0-15)
+palette = 0=#2e3436
+palette = 1=#cc0000
+palette = 2=#4e9a06
+palette = 3=#c4a000
+palette = 4=#3465a4
+palette = 5=#75507b
+palette = 6=#06989a
+palette = 7=#d3d7cf
+palette = 8=#555753
+palette = 9=#ef2929
+palette = 10=#8ae234
+palette = 11=#fce94f
+palette = 12=#729fcf
+palette = 13=#ad7fa8
+palette = 14=#34e2e2
+palette = 15=#eeeeec
+
+# ---------------------------------------------------------
+# TEXT & FONT
+# ---------------------------------------------------------
+font-family = Fira Code
+# font-family = Jet Brains Mono
+
+# ---------------------------------------------------------
+# WINDOW LOOK & FEEL
+# ---------------------------------------------------------
+# Background Effects
+background-opacity = 0.96
+background-blur-radius = 20
+
+# Window Spacing
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+# ---------------------------------------------------------
+# INTERACTION & MOUSE
+# ---------------------------------------------------------
+# Hide the mouse cursor immediately when you start typing
+mouse-hide-while-typing = true
+
+# ---------------------------------------------------------
+# MACOS SPECIFIC SETTINGS
+# ---------------------------------------------------------
+# Uses the native macOS tab bar style
+macos-titlebar-style = tabs
+
+# --- Icon Customizations (Existing options preserved below) ---
+#macos-icon = custom
+#macos-custom-icon = ~/.config/ghostty/2025.icns
+#macos-custom-icon = ~/.config/ghostty/2020.icns
+#macos-custom-icon = ~/.config/ghostty/classic.icns
+#macos-custom-icon = ~/.config/ghostty/sublime.icns
+#macos-icon-frame=chrome
+#macos-icon-ghost-color = #0C6868
+#macos-icon-screen-color = #0EDEDE
