@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>io.sevendegrees.juicy.trialreset</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/arsabolsky/bin/reset-juicy-trial.sh</string>
+        <string>--relaunch</string>
+    </array>
+
+    <!-- Run every day at 04:00 local time. Change Hour/Minute to reschedule. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>4</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Do not run when loaded; only on the schedule above. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/arsabolsky/Library/Logs/juicy-trialreset.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/arsabolsky/Library/Logs/juicy-trialreset.log</string>
+</dict>
+</plist>

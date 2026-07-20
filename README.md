@@ -32,6 +32,25 @@ chmod +x setup.sh
 | `ghostty/config` | Configuration for the Ghostty terminal emulator. |
 | `macos.sh` | A script to apply my specific macOS system defaults (Dock size, Finder settings, etc.). |
 | `macos_defaults_backup.txt` | A complete snapshot of my current `defaults` database for reference. |
+| `sync.sh` | Captures the current laptop's config (Brewfile + dotfiles) back into this repo and pushes. |
+| `scripts/` | Personal helper scripts (see below). |
+| `launchd/` | LaunchAgent plists for scheduled jobs. |
+
+## ⏱️ Scheduled Helpers (`scripts/` + `launchd/`)
+
+Personal utility scripts and their launchd schedules.
+
+| File | Description |
+| :--- | :--- |
+| `scripts/reset-juicy-trial.sh` | Resets the Juicy app's local trial state (clears `trialStartDate` + the `.trial` file while the app is quit). `--status` to inspect, `--relaunch` to reopen after. |
+| `scripts/juicy-dev.sh` | Drives Juicy's dev/testing state directly: force trial `active`/`expired`/`unknown`, expire Pro updates, clear the RevenueCat purchase cache. |
+| `scripts/install-juicy-trialreset.sh` | Installs the two scripts to `~/bin` and loads a LaunchAgent that runs `reset-juicy-trial.sh` daily at 04:00. `--uninstall` to remove. Portable (derives paths from the current user). |
+| `launchd/io.sevendegrees.juicy.trialreset.plist` | Reference copy of the daily-reset LaunchAgent (04:00). The installer generates a per-user copy into `~/Library/LaunchAgents/`. |
+
+Install the scheduled Juicy trial reset:
+```bash
+./scripts/install-juicy-trialreset.sh
+```
 
 ## 🛠️ Maintenance & Updating
 

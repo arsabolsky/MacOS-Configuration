@@ -84,7 +84,39 @@ setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_dups
 
-# Case-insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 
 zstyle ':omz:update' mode auto
 ENABLE_CORRECTION="true"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/arsabolsky/.lmstudio/bin"
+# End of LM Studio CLI section
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/arsabolsky/.antigravity/antigravity/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# 1. Define settings first
+export ZSH_AI_PROVIDER="ollama"
+export ZSH_AI_OLLAMA_MODEL="qwen3.5:0.8b" # Double-check this name with 'ollama list'
+
+# 2. Bypass the hardcoded Anthropic check
+# export ANTHROPIC_API_KEY="dummy_key_to_silence_warning"
+
+# 3. Load the plugin last
+source $(brew --prefix)/share/zsh-ai/zsh-ai.plugin.zsh
+
+autoload -Uz compinit
+compinit
+
+# Completion menu polish
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' group-name ''
+
+# Inline suggestions from history (accept with →)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

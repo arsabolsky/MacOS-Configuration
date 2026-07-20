@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A dotfiles/config repo for automating macOS environment setup. The main entry point is `setup.sh`, which orchestrates everything from a fresh Mac. All config files are symlinked into their expected home-directory locations rather than copied.
+A dotfiles/config repo for automating macOS environment setup. The main entry point is `setup.sh`, which orchestrates everything from a fresh Mac. On a fresh install `setup.sh` symlinks configs into their home-directory locations; ongoing changes on an existing machine are captured back into the repo with `sync.sh` (which copies the live home dotfiles in and pushes).
 
 ## Key Commands
 
@@ -40,6 +40,11 @@ reload
 defaults read > macos_defaults_backup.txt
 ```
 
+**Sync this laptop's current config back into the repo and push:**
+```bash
+./sync.sh   # regenerates Brewfile, copies live dotfiles in, commits, pushes
+```
+
 ## Architecture
 
 `setup.sh` is the orchestrator. It runs steps in order:
@@ -68,3 +73,12 @@ defaults read > macos_defaults_backup.txt
 - Default editor: VS Code (`code --wait`)
 - Default branch: `main`
 - Pull strategy: merge (not rebase)
+
+## Helper Scripts (`scripts/`) and Schedules (`launchd/`)
+
+Personal utilities, kept in the repo and installable on any Mac.
+
+- `scripts/reset-juicy-trial.sh` — resets the Juicy app's local trial state (clears `trialStartDate` in UserDefaults + the `~/Library/Application Support/Juicy/.trial` mirror, while the app is quit). Flags: `--status`, `--relaunch`.
+- `scripts/juicy-dev.sh` — forces Juicy trial states (`active`/`expired`/`unknown`/`<N days ago>`), expires Pro updates, or clears the RevenueCat purchase cache.
+- `scripts/install-juicy-trialreset.sh` — copies the scripts to `~/bin` and installs a per-user LaunchAgent that runs the reset daily at 04:00. `--uninstall` removes it. Paths are derived from the current user, so it is portable.
+- `launchd/io.sevendegrees.juicy.trialreset.plist` — reference copy of that LaunchAgent (managed via `launchctl bootstrap`/`bootout gui/$(id -u)/...`).

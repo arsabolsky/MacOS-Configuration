@@ -61,7 +61,7 @@ mouse-hide-while-typing = true
 # MACOS SPECIFIC SETTINGS
 # ---------------------------------------------------------
 # Uses the native macOS tab bar style
-macos-titlebar-style = tabs
+macos-titlebar-style = transparent
 
 # --- Icon Customizations (Existing options preserved below) ---
 #macos-icon = custom

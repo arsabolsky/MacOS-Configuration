@@ -1,9 +1,9 @@
 tap "asmvik/formulae"
 tap "hashicorp/tap"
-tap "koekeishiya/formulae"
+tap "koekeishiya/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "lihaoyun6/tap"
 tap "matheusml/zsh-ai"
-tap "theboredteam/boring-notch"
+tap "theboredteam/boring-notch", "https://github.com/TheBoredTeam/homebrew-boring-notch"
 tap "thusvill/livewallpaper"
 tap "typewhisper/tap"
 tap "yueseqaz/tap"
@@ -11,8 +11,6 @@ tap "yueseqaz/tap"
 brew "python@3.14"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Get/set bluetooth power and discoverable state
-brew "blueutil"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Like neofetch, but much faster because written mostly in C
@@ -21,16 +19,8 @@ brew "fastfetch"
 brew "ffmpeg"
 # macOS CLI for managing custom icons for files and folders
 brew "fileicon"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
-# Multi-platform software reverse engineering framework
-brew "ghidra"
-# Quickly rewrite git repository history
-brew "git-filter-repo"
 # Command-line tool to export and inspect local iMessage database
 brew "imessage-exporter"
 # Find what models run on your hardware
@@ -39,68 +29,54 @@ brew "llmfit"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # CLI for Mermaid library
 brew "mermaid-cli"
-# Open source relational database management system
-brew "mysql-client"
 # Port scanning utility for large networks
 brew "nmap"
-# Development kit for the Java programming language
-brew "openjdk"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # Fast, disk space efficient package manager
 brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Object-relational database system
-brew "postgresql@14"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
 # Generic machine emulator and virtualizer
 brew "qemu"
-# Wrapper around ripgrep that adds multiple rich file types
-brew "ripgrep-all"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
-# Prints a steam locomotive if you type sl instead of ls
-brew "sl"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Image processing library
-brew "vips"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
-# Network security monitor
-brew "zeek"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
 # Terraform
-brew "hashicorp/tap/terraform"
+brew "hashicorp/tap/terraform", trusted: true
 # Lightweight AI assistant for your terminal
-brew "matheusml/zsh-ai/zsh-ai"
+brew "matheusml/zsh-ai/zsh-ai", trusted: true
 # Open source colour effects manager for Razer devices
 cask "1kc-razer"
 # Get the battery level of all your devices on your Mac.
-cask "lihaoyun6/tap/airbattery"
+cask "lihaoyun6/tap/airbattery", trusted: true
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
-# Application uninstaller
-cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Universal chat app powered by Matrix
+cask "beeper"
 # Not so boring notch That Rocks 🎸🎶 
-cask "theboredteam/boring-notch/boring-notch"
-# Client for the Box cloud storage service
-cask "box-drive"
+cask "theboredteam/boring-notch/boring-notch", trusted: true
 # Open source IDE for exploring and testing APIs
 cask "bruno"
 # Web security testing toolkit
 cask "burp-suite"
+# Web security auditing toolkit
+cask "caido"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Chat client for https://twitch.tv
@@ -115,6 +91,8 @@ cask "coconutbattery"
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
+# System-wide AI autocomplete
+cask "cotypist"
 # Server and cloud storage browser
 cask "cyberduck"
 # Browser for SQLite databases
@@ -125,8 +103,6 @@ cask "dbeaver-community"
 cask "discord"
 # Screen mirroring and digital signage
 cask "ditto"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 cask "font-fira-code"
@@ -141,8 +117,8 @@ cask "google-gemini"
 cask "handbrake-app"
 # Chromium-based web browser
 cask "helium-browser"
-# Utility to hide menu bar items
-cask "hiddenbar"
+# Menu bar battery monitor with custom charge alerts and health tracking
+cask "juicy"
 # Keyboard customiser
 cask "karabiner-elements"
 # Blocks all Keyboard and TouchBar input
@@ -167,20 +143,20 @@ cask "mos"
 cask "obs"
 # Get up and running with large language models locally
 cask "ollama-app"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
-# Sideload iOS apps and games
-cask "playcover-community"
 # Minecraft launcher
 cask "prismlauncher"
 # VPN client focusing on security
 cask "protonvpn"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # Team communication and collaboration software
 cask "slack"
 # File sharing network
@@ -189,16 +165,20 @@ cask "soulseek"
 cask "steam"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Open-source BitTorrent client
 cask "transmission"
 # Speech-to-text and AI text processing
-cask "typewhisper/tap/typewhisper"
+cask "typewhisper/tap/typewhisper", trusted: true
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Network protocol analyzer
 cask "wireshark-app"
 # Video communication and virtual meeting platform
@@ -218,7 +198,6 @@ vscode "aaron-bond.better-comments"
 vscode "alfredbirk.tailwind-documentation"
 vscode "anthropic.claude-code"
 vscode "astral-sh.ty"
-vscode "aykutsarac.jsoncrack-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "charliermarsh.ruff"
 vscode "dbaeumer.vscode-eslint"
