@@ -50,14 +50,36 @@ ln -sf "$(pwd)/.gitconfig" "$HOME/.gitconfig"
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
 
-# 5. Set macOS defaults
+# 5. Authenticate GitHub CLI (.gitconfig uses `gh auth git-credential`)
+if command -v gh &> /dev/null; then
+    if gh auth status &> /dev/null; then
+        echo "GitHub CLI already authenticated, skipping."
+    else
+        echo "Authenticating GitHub CLI (needed for git push + credential helper)..."
+        gh auth login || echo "⚠️  gh auth login skipped/failed — run 'gh auth login' later."
+    fi
+else
+    echo "⚠️  gh not found (expected from Brewfile) — install it, then run 'gh auth login'."
+fi
+
+# 6. Optionally install the daily Juicy trial-reset scheduler
+if [[ -x scripts/install-juicy-trialreset.sh ]]; then
+    read -r -p "Install the daily Juicy trial-reset LaunchAgent? [y/N] " reply || reply=""
+    if [[ "$reply" =~ ^[Yy]$ ]]; then
+        ./scripts/install-juicy-trialreset.sh || echo "⚠️  Juicy scheduler install failed."
+    else
+        echo "Skipped Juicy scheduler (run scripts/install-juicy-trialreset.sh anytime)."
+    fi
+fi
+
+# 7. Set macOS defaults
 echo "Setting macOS defaults..."
 chmod +x macos.sh
 ./macos.sh
 
-# 6. Final instructions
+# 8. Final instructions
 echo "✅ Setup complete!"
 echo "Next steps:"
-echo "1. Restart your terminal."
-echo "2. Log into the Mac App Store (if you added 'mas' apps)."
-echo "3. Configure your shell profile (e.g., ~/.zshrc) to use the new tools."
+echo "1. Restart your terminal (or run: source ~/.zshrc)."
+echo "2. If any 'mas' apps failed, sign into the Mac App Store and re-run: brew bundle install."
+echo "3. Verify GitHub auth with: gh auth status"
